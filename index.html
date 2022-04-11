@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Timed quiz</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <button onclick="showHighScores()"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none btn btn-link">
+                <span class="fs-4" style="color: purple;">View high scores</span>
+            </button>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <span href="#" class="nav-link" style="color: black;">Time:&nbsp;<p id="countdown"
+                            style="float: right;">
+                        </p>
+                    </span>
+                </li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- Body -->
+    <section id="intro">
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-5 fw-bold">Coding Quiz Challenge</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Try to answer the following code-related questions within the time limit.
+                    <br>
+                    Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button id="" type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="hideIntro()">
+                        Start Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="question1" style="display: none;">
+        <div class="px-4 py-10 my-5 text-center">
+            <h1 class="display-5 fw-bold">Commonly used data types DO Not Include:</h1>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="1st_incorrect" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show2ndQuestion()">
+                1. strings
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="1st_incorrect2" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show2ndQuestion()">
+                2. booleans
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="1st_correct" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show2ndQuestion()">
+                3. alerts
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="1st_incorrect3" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show2ndQuestion()">
+                4. numbers
+            </button>
+        </div>
+    </section>
+
+    <section id="question2" style="display: none;">
+        <div class="px-4 py-10 my-5 text-center">
+            <h1 class="display-5 fw-bold">The condition in an if / else statement is enclosed with _______.</h1>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="2nd_incorrect" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show3rdQuestion()">
+                1. quotes
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="2nd_incorrect2" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show3rdQuestion()">
+                2. curly brackets
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="2nd_correct" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show3rdQuestion()">
+                3. parenthesis
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="2nd_incorrect3" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show3rdQuestion()">
+                4. square brackets
+            </button>
+        </div>
+        <div class="px-4 py-10 my-5 text-center">
+            <hr>
+            <h4 id="answer1" style="color: gray; font-style: italic; font-size: xx-large;" class="display-5 fw-bold">
+            </h4>
+        </div>
+    </section>
+
+    <section id="question3" style="display: none;">
+        <div class="px-4 py-10 my-5 text-center">
+            <h1 class="display-5 fw-bold">Arrays in JavaScript can be used to store ______.</h1>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="3rd_incorrect" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show4thQuestion()">
+                1. numbers and strings
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="3rd_incorrect2" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show4thQuestion()">
+                2. other arrays
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="3rd_incorrect3" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show4thQuestion()">
+                3. booleans
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="3rd_correct" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show4thQuestion()">
+                4. all of the above
+            </button>
+        </div>
+        <div class="px-4 py-10 my-5 text-center">
+            <hr>
+            <h4 id="answer2" style="color: gray; font-style: italic; font-size: xx-large;" class="display-5 fw-bold">
+            </h4>
+        </div>
+    </section>
+
+    <section id="question4" style="display: none;">
+        <div class="px-4 py-10 my-5 text-center">
+            <h1 class="display-5 fw-bold">String values must be enclosed within _____ when being assigned to variables.
+            </h1>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="4th_incorrect" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show5thQuestion()">
+                1. commas
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="4th_incorrect2" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show5thQuestion()">
+                2. curly brackets
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="4th_correct" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show5thQuestion()">
+                3. quotes
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="4th_incorrect3" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="show5thQuestion()">
+                4. parenthesis
+            </button>
+        </div>
+        <div class="px-4 py-10 my-5 text-center">
+            <hr>
+            <h4 id="answer3" style="color: gray; font-style: italic; font-size: xx-large;" class="display-5 fw-bold">
+            </h4>
+        </div>
+    </section>
+
+    <section id="question5" style="display: none;">
+        <div class="px-4 py-10 my-5 text-center">
+            <h1 class="display-5 fw-bold">A very useful tool used during development and debugging for printing content
+                to the debugger is:
+            </h1>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="5th_incorrect" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="showResult()">
+                1. JavaScript
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="5th_correct" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="showResult()">
+                2. terminal/bash
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="5th_incorrect2" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="showResult()">
+                3. for loops
+            </button>
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button id="5th_incorrect3" type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;"
+                onclick="showResult()">
+                4. console.log
+            </button>
+        </div>
+        <div class="px-4 py-10 my-5 text-center">
+            <hr>
+            <h4 id="answer4" style="color: gray; font-style: italic; font-size: xx-large;" class="display-5 fw-bold">
+            </h4>
+        </div>
+    </section>
+
+    <section id="result" style="display: none;">
+        <div class="px-4 py-10 my-5 text-center">
+            <h1 class="display-5 fw-bold">All done!</h1>
+            <p class="lead mb-4">Your final score is <span id="score"></span></p>
+            <div class="form-group ">
+                <label for="inputInitials">Enter initials:</label>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <input class="form-control" id="inputInitials" placeholder="Example: LS" style="width: 20%;">
+                    <button type="button" id="btnSaveUser" onclick="showHighScores()"
+                        class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+            <hr>
+            <h4 id="answer5" style="color: gray; font-style: italic; font-size: xx-large;" class="display-5 fw-bold">
+            </h4>
+        </div>
+    </section>
+
+    <section id="highscores" style="display: none;">
+        <div class="px-4 py-10 my-5 text-center">
+            <h1 class="display-5 fw-bold">High scores</h1>
+
+            <table class="table table-hover" id="usersTable">
+                <thead></thead>
+                <tr>
+                    <th>Initials</th>
+                    <th>Score</th>
+                </tr>
+            </table>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="showIntro()">Go back</button>
+            <button type="button" class="btn btn-primary" onclick="clearHighscores()">Clear high scores</button>
+        </div>
+    </section>
+
+</body>
+<script src="./assets/js/java.js"></script>
+
+</html>
